@@ -46,7 +46,7 @@ Imagine you're building a powerful monitoring tool. You want to inspect every ne
 Let’s walk through how it all works :
 
 <img src="/screenshots/2.png">
-Credits: <a href="https://ebpf.io/what-is-ebpf/">ebpf.io</a>
+Source: <a href="https://ebpf.io/what-is-ebpf/">ebpf.io</a>
 
 - Development Phase: Writing eBPF Code
 Everything starts with a small piece of C code — but not your everyday C but a restricted, safer version of a C program, specifying exactly what you want.
