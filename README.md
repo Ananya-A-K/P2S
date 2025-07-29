@@ -130,7 +130,7 @@ git clone https://github.com/Ananya-A-K/P2S.git
 ```
 
 - Install ebpf:
-Hardware requirements: 2GB RAM, Intel Core with 2 cores
+Hardware requirements: 2GB RAM, Intel Core with 2 cores <br>
 Note: The eBPF programs can run on any hardware as long as it can run Linux!!
 
 Ubuntu commands: 
