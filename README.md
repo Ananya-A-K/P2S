@@ -122,3 +122,52 @@ Every test consists of two 10 minute run of monitored webRTC transmission along 
 
 ## Result
 12 different tests were conducted and the conclusion derived from the test results are that the birate got stabilised and the ther was considerable reduction in jitter.
+
+## Setting up
+- Clone github repo:
+```bash
+git clone https://github.com/Ananya-A-K/P2S.git
+```
+
+- Install ebpf:
+Hardware requirements: 2GB RAM, Intel Core with 2 cores
+Note: The eBPF programs can run on any hardware as long as it can run Linux!!
+
+Ubuntu commands: 
+```bash
+sudo apt install linux-headers-$(uname -r) libbpfcc-dev libbpf-dev llvm clang gcc-multilib build-essential linux-tools-$(uname -r) linux-tools-common linux-tools-generic
+```
+
+- Setup ebpf code files on local:
+```bash
+cd ebpf_files
+./egress.sh
+./ingress.sh
+./ingress_setup.sh
+./maps.sh
+./tc_setup.sh
+./xdp.sh
+```
+
+- To run the node application on chrome:
+```bash
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt --fix-broken install # Fix dependencies if needed
+google-chrome --unsafely-treat-insecure-origin-as-secure=http://<server-ip> --user-data-dir=/tmp/chrome-test --disable-web-security
+```
+
+- On server chrome browser:
+```bash
+http://localhost:3000
+```
+
+- On client chrome browser:
+```bash
+http://localhost:3000#1
+```
+
+- Cleanup:
+```bash
+./cleanup.sh
+```
